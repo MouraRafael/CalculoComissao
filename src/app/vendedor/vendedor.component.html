@@ -1,1 +1,48 @@
-<p>vendedor works!</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Comissão</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="titulo">
+            <h1>Calcula Comissão</h1>
+        </div>
+    </header>
+    <section class="container">
+        <div class="box">
+            <div>
+                <label for="salario">Digite o Valor Base do salário</label>
+                <input 
+                #salInput
+                (keyup)="atualizaSalario(salInput.value)" type="number" [value]="data.salario" id="salario">
+            </div>
+
+            <div>
+                <label for="comissao">Digite o valor da comissão por venda</label>
+                <input
+                #comissaoInput
+                (keyup)="atualizaComissao(comissaoInput.value)"
+                type="number" [value]="data.comissaoVenda" id="comissao">
+            </div>
+
+            <div>
+                <label for="qtdCarros">Digite a quantidade de carros vendidos</label>
+                <input
+                #qtdCarrosVendidos
+                (keyup)="atualizaCarros(qtdCarrosVendidos.value)"
+                type="number" [value]="data.qtdCarrosVendidos">
+            </div>
+            <p>{{data.comissaoTotal}}</p>
+
+            <button
+            (click)="calcula()"
+            >Calcular</button>
+        </div>
+    </section>
+    
+</body>
+</html>
